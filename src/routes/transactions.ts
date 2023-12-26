@@ -9,9 +9,29 @@ const createTransactionBodySchema = z.object({
   type: z.enum(['credit', 'debit']),
 })
 
+const getTransactionsParamsSchema = z.object({
+  id: z.string().uuid(),
+})
+
 const TABLE = 'transactions'
 
 export async function transactionRoutes(app: FastifyInstance) {
+  app.get('/', async () => {
+    const transactions = await knex(TABLE).select()
+
+    return { transactions }
+  })
+
+  app.get('/:id', async (request) => {
+    const { params } = request
+
+    const { id } = getTransactionsParamsSchema.parse(params)
+
+    const transaction = await knex(TABLE).where('id', id).first()
+
+    return { transaction }
+  })
+
   app.post('/', async (request, reply) => {
     const { body } = request
 
