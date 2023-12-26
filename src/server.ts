@@ -1,5 +1,11 @@
 import fastify from 'fastify'
+import { env } from './env'
+import { routes } from './routes'
+
+const port = env.PORT
 
 const app = fastify()
 
-app.listen({ port: 3333 }).then(() => console.log('HTTP Server Running'))
+app.register(routes)
+
+app.listen({ port }).then(() => console.log('HTTP Server Running'))
