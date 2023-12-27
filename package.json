@@ -9,7 +9,9 @@
     "knex": "node --loader tsx ./node_modules/.bin/knex",
     "migrate": "node --loader tsx ./node_modules/.bin/knex migrate:latest",
     "migrate:rollback": "node --loader tsx ./node_modules/.bin/knex migrate:rollback",
-    "migrate:make": "node --loader tsx ./node_modules/.bin/knex migrate:make"
+    "migrate:rollback:all": "node --loader tsx ./node_modules/.bin/knex migrate:rollback --all",
+    "migrate:make": "node --loader tsx ./node_modules/.bin/knex migrate:make",
+    "test": "vitest"
   },
   "keywords": [],
   "author": "",
@@ -17,9 +19,12 @@
   "devDependencies": {
     "@rocketseat/eslint-config": "^2.1.0",
     "@types/node": "^20.10.5",
+    "@types/supertest": "^6.0.1",
     "eslint": "^8.56.0",
+    "supertest": "^6.3.3",
     "tsx": "^4.7.0",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "vitest": "^1.1.0"
   },
   "dependencies": {
     "@fastify/cookie": "^9.2.0",
