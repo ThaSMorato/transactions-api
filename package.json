@@ -11,7 +11,9 @@
     "migrate:rollback": "node --loader tsx ./node_modules/.bin/knex migrate:rollback",
     "migrate:rollback:all": "node --loader tsx ./node_modules/.bin/knex migrate:rollback --all",
     "migrate:make": "node --loader tsx ./node_modules/.bin/knex migrate:make",
-    "test": "vitest"
+    "test": "vitest",
+    "build": "tsup src",
+    "start": "node dist/server.js"
   },
   "keywords": [],
   "author": "",
@@ -22,6 +24,7 @@
     "@types/supertest": "^6.0.1",
     "eslint": "^8.56.0",
     "supertest": "^6.3.3",
+    "tsup": "^8.0.1",
     "tsx": "^4.7.0",
     "typescript": "^5.3.3",
     "vitest": "^1.1.0"

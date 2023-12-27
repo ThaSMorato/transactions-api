@@ -1,4 +1,12 @@
+#Dependencies
 node_modules
+
+#Temp
 tmp
+
+#Enviromontents
 .env
 .env.test
+
+#Build
+dist
