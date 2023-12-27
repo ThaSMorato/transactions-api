@@ -80,8 +80,10 @@ export async function transactionRoutes(app: FastifyInstance) {
       })
     }
 
+    const id = randomUUID()
+
     await knex(TABLE).insert({
-      id: randomUUID(),
+      id,
       title,
       amount,
       session_id: sessionId,
