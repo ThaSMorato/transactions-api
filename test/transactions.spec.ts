@@ -17,6 +17,8 @@ const transaction = {
   type: 'credit',
 }
 
+// render.com, fly.io, railway.app
+
 describe('transactions routes', () => {
   beforeAll(async () => {
     await app.ready()
